@@ -22,11 +22,7 @@ RUN apk update \
     && tar --strip-components=1 -xzf ../rvm-stable.tar.gz \
     && ./install --auto-dotfiles --autolibs=0 \
     && cd ../ && rm -rf rvm-stable stable.tar.gz rvm \
-    && rm -rf /var/cache/apk/*
-
-    # Install ruby, bundler and gem
-    && rvm install $RUBY_VERSION \
-    && rvm gemset create $RUBY_GEMSET
+    && rm -rf /var/cache/apk/* \
 
 ENTRYPOINT ["/bin/bash"]
 
