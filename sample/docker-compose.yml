@@ -2,14 +2,14 @@ version: '3'
 
 services:
   app:
-    image: myruby-project
+    image: my-ror-project
     build:
       context: .
       args:
         BUNDLER_VERSION: 1.16.0
         RUBYGEMS_VERSION: 2.6.12
         RUBY_VERSION: ruby-2.3.4
-        RUBY_GEMSET: mygemset
+        RUBY_GEMSET: my-gemset
         PASSENGER_APP_ENV: development
     ports:
       - "3000:80"
